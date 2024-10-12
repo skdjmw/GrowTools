@@ -572,7 +572,7 @@ function item_decoder(file, using_editor) {
         var version = read_buffer_number(arrayBuffer, 0, 2);
         var item_count = read_buffer_number(arrayBuffer, 2, 4);
 
-        if (version > 18) {
+        /*if (version > 18) {
             return Swal.mixin({
                 toast: true,
                 position: 'top-end',
@@ -582,7 +582,7 @@ function item_decoder(file, using_editor) {
                 icon: 'error',
                 title: "Your items.dat version is " + version + ", and This decoder doesnt support that version!"
             })
-        }
+        }*/
         data_json.version = version
         data_json.item_count = item_count
         data_json.items = []
