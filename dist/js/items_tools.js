@@ -384,8 +384,8 @@ function process_item_encoder(result, using_txt) {
                     mem_pos += 4;
                 }
                 if (version >= 19) {
-                    write_buffer_number(mem_pos, 4, result1[50])
-                    mem_pos += 4;
+                    write_buffer_number(mem_pos, 9, result1[50])
+                    mem_pos += 9;
                 }
             }
         }
@@ -527,8 +527,8 @@ function process_item_encoder(result, using_txt) {
                 mem_pos += 4;
             }
             if (result.version >= 19) {
-                write_buffer_number(mem_pos, 4, result.items[a].int_version_19)
-                mem_pos += 4;
+                write_buffer_number(mem_pos, 9, result.items[a].int_version_19)
+                mem_pos += 9;
             }
         }
     }
@@ -764,8 +764,8 @@ function item_decoder(file, using_editor) {
             }
 
             if (version >= 19) {
-                var int_version_19 = read_buffer_number(arrayBuffer, mem_pos, 4)
-                mem_pos += 4;
+                var int_version_19 = read_buffer_number(arrayBuffer, mem_pos, 9)
+                mem_pos += 9;
             }
 
             if (item_id != a) console.log(`Unordered Items at ${a}`)
